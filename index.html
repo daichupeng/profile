@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dai Chupeng — AI Product Manager</title>
+<meta name="description" content="Dai Chupeng — Product Manager building AI agents. Credit risk, debt collection systems, and agentic AI projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #f6f8fb;
+    --bg-elev: #edf1f6;
+    --bg-elev-2: #e4eaf1;
+    --line: #dbe2ea;
+    --text: #1c232b;
+    --text-dim: #55606b;
+    --text-faint: #8994a1;
+    --gold: #1c5a96;
+    --gold-soft: #2f83c9;
+    --teal: #0a92b0;
+    --max: 740px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--teal); text-decoration:none; border-bottom:1px solid transparent; transition:border-color .15s ease, color .15s ease;}
+  a:hover{border-bottom-color:var(--teal);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--gold-soft); outline-offset:3px; border-radius:2px;}
+
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin:0 0 14px;
+    font-weight:600;
+  }
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    padding:76px 0 0;
+    opacity:0;
+    animation: fadeUp .7s ease forwards;
+  }
+  @keyframes fadeUp{
+    from{opacity:0; transform:translateY(10px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  .name{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-optical-sizing:auto;
+    font-size:clamp(36px, 6.4vw, 52px);
+    letter-spacing:-0.01em;
+    margin:0 0 6px;
+    line-height:1.03;
+  }
+  .role{
+    font-family:'Source Serif 4', serif;
+    font-weight:400;
+    color:var(--gold-soft);
+    font-size:clamp(16px, 2.2vw, 19px);
+    margin:0 0 30px;
+  }
+
+  /* ---------- INTRO STATEMENT ---------- */
+  .intro{
+    background:var(--bg-elev);
+    border:1px solid var(--line);
+    border-left:4px solid var(--gold-soft);
+    border-radius:10px;
+    padding:28px 30px;
+    margin-bottom:34px;
+    box-shadow:0 1px 2px rgba(36,35,31,0.04);
+  }
+  .intro-title{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+    margin:0 0 14px;
+  }
+  .intro p{
+    font-family:'Source Serif 4', serif;
+    font-weight:400;
+    font-size:clamp(18px, 2.3vw, 21px);
+    line-height:1.55;
+    color:var(--text);
+    margin:0;
+  }
+  .intro p + p{margin-top:14px;}
+  .intro b{font-weight:600; color:var(--text);}
+
+  .contact-row{
+    display:flex; flex-wrap:wrap; gap:8px 20px;
+    font-size:14px; color:var(--text-dim);
+    padding:22px 0 40px;
+    border-bottom:1px solid var(--line);
+  }
+  .contact-row a{color:var(--text-dim);}
+  .contact-row a:hover{color:var(--teal);}
+  .contact-row span.sep{color:var(--text-faint);}
+
+  /* ---------- SECTIONS GENERAL ---------- */
+  section{padding:44px 0; border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  h2.section-title{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:23px;
+    margin:0 0 24px;
+    letter-spacing:-0.01em;
+  }
+
+  /* ---------- PATH SUMMARY (was: tree) ---------- */
+  .path{display:flex; flex-direction:column; gap:0;}
+  .path-step{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:4px 20px;
+    padding:16px 0;
+    border-top:1px solid var(--line);
+  }
+  .path-step:first-child{border-top:none; padding-top:0;}
+  .path-yrs{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--text-faint); padding-top:3px;}
+  .path-body .path-title{font-family:'Source Serif 4', serif; font-weight:600; font-size:17px; color:var(--text); margin:0 0 4px;}
+  .path-body p{margin:0; color:var(--text-dim); font-size:14.5px;}
+  @media (max-width:520px){
+    .path-step{grid-template-columns:1fr;}
+    .path-yrs{padding-top:0;}
+  }
+
+  /* ---------- EXPERIENCE ---------- */
+  .job{margin-bottom:36px;}
+  .job:last-child{margin-bottom:0;}
+  .job-head{display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:4px 16px; margin-bottom:2px;}
+  .job-title{font-family:'Source Serif 4', serif; font-weight:600; font-size:18px;}
+  .job-meta{font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--text-faint); white-space:nowrap;}
+  .job-company{color:var(--gold); font-size:13.5px; margin-bottom:12px; font-weight:500;}
+  .job ul{margin:0; padding-left:19px; color:var(--text-dim); font-size:14.5px;}
+  .job ul li{margin-bottom:7px;}
+  .job ul li::marker{color:var(--teal);}
+  .job ul li b{color:var(--text); font-weight:600;}
+
+  /* ---------- PROJECTS (repo cards) ---------- */
+  .repo-grid{display:flex; flex-direction:column; gap:14px;}
+  .repo-card{
+    background:var(--bg-elev);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:20px 22px;
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  .repo-card:hover{border-color:var(--gold-soft); transform:translateY(-1px);}
+  .repo-head{display:flex; align-items:center; gap:9px; margin-bottom:8px; flex-wrap:wrap;}
+  .repo-icon{color:var(--text-faint); flex-shrink:0;}
+  .repo-name{font-weight:600; font-size:15.5px; color:var(--text); font-family:'IBM Plex Sans', sans-serif;}
+  .repo-name a{color:inherit; border-bottom:none;}
+  .repo-name a:hover{color:var(--teal);}
+  .repo-desc{color:var(--text-dim); font-size:14.5px; margin:0 0 12px; max-width:60ch;}
+  .repo-tags{display:flex; gap:8px; flex-wrap:wrap;}
+  .repo-foot{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-top:12px;}
+  .repo-link{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:13px; font-weight:500; color:var(--teal);
+    border-bottom:none;
+  }
+  .repo-link:hover{color:var(--gold);}
+  .repo-link svg{flex-shrink:0;}
+  .tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    color:var(--gold);
+    background:rgba(29,95,158,0.07);
+    border:1px solid rgba(29,95,158,0.22);
+    padding:3px 9px;
+    border-radius:20px;
+  }
+
+  /* ---------- EDUCATION ---------- */
+  .edu-item{margin-bottom:24px;}
+  .edu-item:last-child{margin-bottom:0;}
+  .edu-head{display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:4px 16px;}
+  .edu-school{font-family:'Source Serif 4', serif; font-weight:600; font-size:17px;}
+  .edu-meta{font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--text-faint);}
+  .edu-degree{color:var(--gold); font-size:13.5px; margin:3px 0 6px; font-weight:500;}
+  .edu-item p{margin:0; color:var(--text-dim); font-size:14.5px;}
+
+  /* ---------- SKILLS / LANGUAGES ---------- */
+  .skills-row{display:flex; gap:40px; flex-wrap:wrap; margin:0;}
+  .skills-col dt{font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--text-faint); margin-bottom:6px; letter-spacing:.03em;}
+  .skills-col dd{margin:0 0 20px; color:var(--text-dim); font-size:14.5px;}
+
+  footer{padding:36px 0 56px; text-align:center;}
+  footer p{color:var(--text-faint); font-family:'JetBrains Mono', monospace; font-size:12px; margin:0;}
+
+  @media (max-width:600px){
+    header.hero{padding:56px 0 0;}
+    section{padding:34px 0;}
+    .job-head, .edu-head{flex-direction:column; align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1 class="name">Dai Chupeng</h1>
+    <p class="role">Product Manager, moving from credit risk into AI agents</p>
+
+    <div class="intro">
+      <p class="intro-title">Who Am I</p>
+      <p><i>3 years operational analyst, 5 years product manager, current AI researcher</i></p>
+      <p>I have managed the <b>internal operational platforms</b> at Shopee and ByteDance. I learnt how to scope an operational problem, align engineering and ops teams around it, and ship a product to empower the daily work of the company employees. Trained for 3 years as a operational analyst, my decisions are always <b>data driven.</b></p>
+      <p>I am now moving into the AI industry through a research master's in LLM agents at NTU. My main focus is <b>agentic architecture and agent decision-making</b>. I make use of established agentic patterns as well as innovative ones to target messy and ambiguous real-world problems.</p>
+      <p>With the product sense estabilished in traditional PM work and the knowledge and enthusiathm in the most advanced AI products, I aim to produce cutting-edge AI-driven platforms to empower more users.</p>
+      <p>In the LLM AI age, </p>
+    </div>
+
+    <div class="contact-row">
+      <a href="mailto:chupengdai@gmail.com">chupengdai@gmail.com</a>
+      <span class="sep">·</span>
+      <a href="tel:+6586126331">+65 8612 6331</a>
+      <span class="sep">·</span>
+      <a href="https://www.linkedin.com/in/chupeng-dai/" target="_blank" rel="noopener">linkedin.com/in/chupeng-dai</a>
+      <span class="sep">·</span>
+      <a href="https://github.com/daichupeng" target="_blank" rel="noopener">github.com/daichupeng</a>
+      <span class="sep">·</span>
+      <span>Singapore</span>
+    </div>
+  </div>
+</header>
+
+<section id="overview">
+  <div class="wrap">
+    <p class="eyebrow">The Path Here</p>
+    <div class="path">
+      <div class="path-step">
+        <div class="path-yrs">2013–2020</div>
+        <div class="path-body">
+          <p class="path-title">Foundations — engineering &amp; operations</p>
+          <p>Top 2% Renaissance Engineering Programme at NTU, chemical engineering. Then three years as a logistics operations analyst at Shopee, learning to turn operational data into policy.</p>
+        </div>
+      </div>
+      <div class="path-step">
+        <div class="path-yrs">2021–2025</div>
+        <div class="path-body">
+          <p class="path-title">Product &amp; risk — Shopee, ByteDance</p>
+          <p>Built and led debt collection systems, credit risk frameworks, and an underwriting pipeline across Singapore, Brazil, and Malaysia, managing teams of up to four.</p>
+        </div>
+      </div>
+      <div class="path-step">
+        <div class="path-yrs">2025–present</div>
+        <div class="path-body">
+          <p class="path-title">AI agents — NTU research &amp; agentic products</p>
+          <p>Master's research on explainable, agentic reasoning, alongside three main projects in agentic design: recur-agent, pokerit, and insurance_consult.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <p class="eyebrow">Experience</p>
+    <h2 class="section-title">Work</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">Product Manager, Credit Risk</span>
+        <span class="job-meta">JUN 2024 – JUN 2025</span>
+      </div>
+      <div class="job-company">ByteDance, Singapore</div>
+      <ul>
+        <li>Owned the risk management framework for self-operated credit products, including data vendor integration for underwriting.</li>
+        <li>Launched risk control for a <b>Malaysia BNPL product</b>: integrated local credit bureaus and held a 60% underwriting pass rate at a 2.5% first-payment-default rate.</li>
+        <li>Built a <b>debt collection CRM from scratch</b>, covering 4,000 overdue cases in 3 months at an 85% 30-day repayment rate.</li>
+        <li>Shipped an <b>LLM-powered QA system</b> for collection calls, flagging zero-tolerance behaviors at 90%+ recall and 50%+ precision.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">Product Manager, Credit Products</span>
+        <span class="job-meta">JAN 2021 – JUN 2024</span>
+      </div>
+      <div class="job-company">Shopee, Singapore</div>
+      <ul>
+        <li>Led two PM teams (7 people total) across the debt collection CRM and the user-growth promotion platform.</li>
+        <li>Replaced a rule-based collection strategy with a <b>model-based one</b> (built with data science), cutting operating cost by 10%.</li>
+        <li>Spent 6 months in <b>Brazil</b> standing up debt collection operations for a first-time credit launch — SOPs, BPO agency, monitoring — then handed off to local managers.</li>
+        <li>Built a robocall activation module that improved positive response rate from 15% to 30%+ over 4 months.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">Logistics Operations Analyst, Regional Operations</span>
+        <span class="job-meta">JAN 2018 – DEC 2020</span>
+      </div>
+      <div class="job-company">Shopee, Singapore</div>
+      <ul>
+        <li>Designed a delivery-preference feature that improved the in-house fleet's delivery success rate by 8%.</li>
+        <li>Modeled the cost of tightening sellers' days-to-ship policy and rolled out the optimal balance across markets.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <p class="eyebrow">Main Projects</p>
+    <h2 class="section-title">Building</h2>
+    <div class="repo-grid">
+
+      <div class="repo-card">
+        <div class="repo-head">
+          <svg class="repo-icon" width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 1 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"/></svg>
+          <span class="repo-name"><a href="https://github.com/daichupeng/recur-agent" target="_blank" rel="noopener">recur-agent</a></span>
+        </div>
+        <p class="repo-desc">A meta-agent that builds other agents. Given a requirement, it recursively breaks the problem into skills, then generates and wires up agents to cover each one.</p>
+        <div class="repo-foot">
+          <div class="repo-tags"><span class="tag">meta-agent</span><span class="tag">recursive planning</span></div>
+          <a class="repo-link" href="https://github.com/daichupeng/recur-agent" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="repo-card">
+        <div class="repo-head">
+          <svg class="repo-icon" width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 1 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"/></svg>
+          <span class="repo-name"><a href="https://github.com/daichupeng/pokerit" target="_blank" rel="noopener">pokerit</a></span>
+        </div>
+        <p class="repo-desc">An LLM-driven poker trainer. Reads a hand, reasons through the spot, and returns a suggested line with the reasoning behind it.</p>
+        <div class="repo-foot">
+          <div class="repo-tags"><span class="tag">LLM reasoning</span></div>
+          <a class="repo-link" href="https://github.com/daichupeng/pokerit" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="repo-card">
+        <div class="repo-head">
+          <svg class="repo-icon" width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 1 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"/></svg>
+          <span class="repo-name"><a href="https://github.com/daichupeng/insurance_consult" target="_blank" rel="noopener">insurance_consult</a></span>
+        </div>
+        <p class="repo-desc">An agentic insurance advisor for the Singapore market. Analyzes a user's request and profile to identify the most suitable policy.</p>
+        <div class="repo-foot">
+          <div class="repo-tags"><span class="tag">agentic workflow</span></div>
+          <a class="repo-link" href="https://github.com/daichupeng/insurance_consult" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <p class="eyebrow">Education</p>
+    <h2 class="section-title">Education</h2>
+
+    <div class="edu-item">
+      <div class="edu-head">
+        <span class="edu-school">Nanyang Technological University, Singapore</span>
+        <span class="edu-meta">AUG 2025 – PRESENT</span>
+      </div>
+      <div class="edu-degree">Master of Engineering in Artificial Intelligence</div>
+      <p>Research-based master's specializing in LLM agents. Current research: Explainable Active Feature Acquisition via Precedent-Augmented Reasoning.</p>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-head">
+        <span class="edu-school">Nanyang Technological University, Singapore</span>
+        <span class="edu-meta">AUG 2013 – DEC 2017</span>
+      </div>
+      <div class="edu-degree">Renaissance Engineering Programme</div>
+      <p>Top 2% of the cohort. B.Eng Chemical Engineering (CGPA 4.4/5.0, Distinction) alongside an M.Sc. Technology Management (CGPA 4.5/5.0, Highest Distinction).</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <p class="eyebrow">Skills</p>
+    <h2 class="section-title">Skills &amp; Languages</h2>
+    <dl class="skills-row">
+      <div class="skills-col">
+        <dt>LANGUAGES</dt>
+        <dd>English (bilingual) · Mandarin Chinese (native)</dd>
+      </div>
+      <div class="skills-col">
+        <dt>DOMAINS</dt>
+        <dd>Credit risk · debt collection systems · agentic AI · LLM applications</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>dai-chupeng/resume — last updated Feb 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
