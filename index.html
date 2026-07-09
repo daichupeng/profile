@@ -20,7 +20,8 @@
     --gold: #1c5a96;
     --gold-soft: #2f83c9;
     --teal: #0a92b0;
-    --max: 1300px;
+    --max: 960px;
+    --text-max: 700px;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -42,6 +43,7 @@
   a:focus-visible, button:focus-visible{outline:2px solid var(--gold-soft); outline-offset:3px; border-radius:2px;}
 
   .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+  .text-col{max-width:var(--text-max); margin:0 auto;}
 
   .eyebrow{
     font-family:'JetBrains Mono', monospace;
@@ -51,6 +53,7 @@
     color:var(--gold);
     margin:0 0 14px;
     font-weight:600;
+    text-align:center;
   }
 
   /* ---------- HERO ---------- */
@@ -71,6 +74,7 @@
     letter-spacing:-0.01em;
     margin:0 0 6px;
     line-height:1.03;
+    text-align:center;
   }
   .role{
     font-family:'Source Serif 4', serif;
@@ -78,6 +82,7 @@
     color:var(--gold-soft);
     font-size:clamp(16px, 2.2vw, 19px);
     margin:0 0 30px;
+    text-align:center;
   }
 
   /* ---------- INTRO STATEMENT ---------- */
@@ -88,37 +93,40 @@
     border-radius:10px;
     padding:28px 30px;
     margin-bottom:34px;
-    box-shadow:0 1px 2px rgba(36,35,31,0.04);
-  }
-  .intro-title{
-    font-family:'JetBrains Mono', monospace;
-    font-size:12px;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-    color:var(--gold);
-    font-weight:600;
-    margin:0 0 14px;
+    box-shadow:0 1px 2px rgba(28,35,43,0.05);
   }
   .intro p{
     font-family:'Source Serif 4', serif;
     font-weight:400;
-    font-size:clamp(18px, 2.3vw, 21px);
+    font-size:clamp(17px, 2.1vw, 19px);
     line-height:1.55;
     color:var(--text);
     margin:0;
+    max-width:66ch;
   }
   .intro p + p{margin-top:14px;}
   .intro b{font-weight:600; color:var(--text);}
 
   .contact-row{
-    display:flex; flex-wrap:wrap; gap:8px 20px;
-    font-size:14px; color:var(--text-dim);
+    display:flex; flex-direction:column; align-items:center;
+    gap:10px;
     padding:22px 0 40px;
     border-bottom:1px solid var(--line);
   }
-  .contact-row a{color:var(--text-dim);}
-  .contact-row a:hover{color:var(--teal);}
-  .contact-row span.sep{color:var(--text-faint);}
+  .contact-links{
+    display:flex; flex-wrap:wrap; justify-content:center;
+    gap:8px 20px;
+    font-size:14px; color:var(--text-dim);
+  }
+  .contact-links a{color:var(--text-dim);}
+  .contact-links a:hover{color:var(--teal);}
+  .contact-links span.sep{color:var(--text-faint);}
+  .contact-note{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    color:var(--text-faint);
+    text-align:center;
+  }
 
   /* ---------- SECTIONS GENERAL ---------- */
   section{padding:44px 0; border-bottom:1px solid var(--line);}
@@ -129,9 +137,10 @@
     font-size:23px;
     margin:0 0 24px;
     letter-spacing:-0.01em;
+    text-align:center;
   }
 
-  /* ---------- PATH SUMMARY (was: tree) ---------- */
+  /* ---------- PATH SUMMARY ---------- */
   .path{display:flex; flex-direction:column; gap:0;}
   .path-step{
     display:grid;
@@ -143,7 +152,7 @@
   .path-step:first-child{border-top:none; padding-top:0;}
   .path-yrs{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--text-faint); padding-top:3px;}
   .path-body .path-title{font-family:'Source Serif 4', serif; font-weight:600; font-size:17px; color:var(--text); margin:0 0 4px;}
-  .path-body p{margin:0; color:var(--text-dim); font-size:14.5px;}
+  .path-body p{margin:0; color:var(--text-dim); font-size:14.5px; max-width:60ch;}
   @media (max-width:520px){
     .path-step{grid-template-columns:1fr;}
     .path-yrs{padding-top:0;}
@@ -156,43 +165,52 @@
   .job-title{font-family:'Source Serif 4', serif; font-weight:600; font-size:18px;}
   .job-meta{font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--text-faint); white-space:nowrap;}
   .job-company{color:var(--gold); font-size:13.5px; margin-bottom:12px; font-weight:500;}
-  .job ul{margin:0; padding-left:19px; color:var(--text-dim); font-size:14.5px;}
+  .job ul{margin:0; padding-left:19px; color:var(--text-dim); font-size:14.5px; max-width:68ch;}
   .job ul li{margin-bottom:7px;}
   .job ul li::marker{color:var(--teal);}
   .job ul li b{color:var(--text); font-weight:600;}
 
-  /* ---------- PROJECTS (repo cards) ---------- */
-  .repo-grid{display:flex; flex-direction:column; gap:14px;}
+  /* ---------- PROJECTS (repo cards, 3-up row) ---------- */
+  .repo-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:16px;
+  }
+  @media (max-width:820px){
+    .repo-grid{grid-template-columns:1fr;}
+  }
   .repo-card{
     background:var(--bg-elev);
     border:1px solid var(--line);
     border-radius:8px;
-    padding:20px 22px;
+    padding:18px 18px;
+    display:flex;
+    flex-direction:column;
     transition:border-color .15s ease, transform .15s ease;
   }
   .repo-card:hover{border-color:var(--gold-soft); transform:translateY(-1px);}
-  .repo-head{display:flex; align-items:center; gap:9px; margin-bottom:8px; flex-wrap:wrap;}
+  .repo-head{display:flex; align-items:center; gap:8px; margin-bottom:8px; flex-wrap:wrap;}
   .repo-icon{color:var(--text-faint); flex-shrink:0;}
-  .repo-name{font-weight:600; font-size:15.5px; color:var(--text); font-family:'IBM Plex Sans', sans-serif;}
+  .repo-name{font-weight:600; font-size:15px; color:var(--text); font-family:'IBM Plex Sans', sans-serif;}
   .repo-name a{color:inherit; border-bottom:none;}
   .repo-name a:hover{color:var(--teal);}
-  .repo-desc{color:var(--text-dim); font-size:14.5px; margin:0 0 12px; max-width:60ch;}
-  .repo-tags{display:flex; gap:8px; flex-wrap:wrap;}
-  .repo-foot{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-top:12px;}
+  .repo-desc{color:var(--text-dim); font-size:13.5px; margin:0 0 14px; flex-grow:1;}
+  .repo-tags{display:flex; gap:6px; flex-wrap:wrap;}
+  .repo-foot{display:flex; flex-direction:column; align-items:flex-start; gap:10px; margin-top:auto;}
   .repo-link{
     display:inline-flex; align-items:center; gap:6px;
-    font-size:13px; font-weight:500; color:var(--teal);
+    font-size:12.5px; font-weight:500; color:var(--teal);
     border-bottom:none;
   }
   .repo-link:hover{color:var(--gold);}
   .repo-link svg{flex-shrink:0;}
   .tag{
     font-family:'JetBrains Mono', monospace;
-    font-size:11px;
+    font-size:10.5px;
     color:var(--gold);
     background:rgba(29,95,158,0.07);
     border:1px solid rgba(29,95,158,0.22);
-    padding:3px 9px;
+    padding:3px 8px;
     border-radius:20px;
   }
 
@@ -203,10 +221,10 @@
   .edu-school{font-family:'Source Serif 4', serif; font-weight:600; font-size:17px;}
   .edu-meta{font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--text-faint);}
   .edu-degree{color:var(--gold); font-size:13.5px; margin:3px 0 6px; font-weight:500;}
-  .edu-item p{margin:0; color:var(--text-dim); font-size:14.5px;}
+  .edu-item p{margin:0; color:var(--text-dim); font-size:14.5px; max-width:68ch;}
 
   /* ---------- SKILLS / LANGUAGES ---------- */
-  .skills-row{display:flex; gap:40px; flex-wrap:wrap; margin:0;}
+  .skills-row{display:flex; gap:40px; flex-wrap:wrap; margin:0; justify-content:center; text-align:center;}
   .skills-col dt{font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--text-faint); margin-bottom:6px; letter-spacing:.03em;}
   .skills-col dd{margin:0 0 20px; color:var(--text-dim); font-size:14.5px;}
 
@@ -217,6 +235,7 @@
     header.hero{padding:56px 0 0;}
     section{padding:34px 0;}
     .job-head, .edu-head{flex-direction:column; align-items:flex-start;}
+    .intro{padding:22px 20px;}
   }
 </style>
 </head>
@@ -224,108 +243,34 @@
 
 <header class="hero">
   <div class="wrap">
-    <h1 class="name">Dai Chupeng</h1>
-    <p class="role">Product Manager, moving from credit risk into AI agents</p>
+    <div class="text-col">
+      <h1 class="name">Dai Chupeng</h1>
+      <p class="role">Product Manager, moving from credit risk into AI agents</p>
 
-    <div class="intro">
-      <p><b><i>3 years operational analyst, 5 years product manager, current AI researcher</i></b></p>
-      <p>I have managed the <b>internal operational platforms</b> at Shopee and ByteDance. I learnt how to scope an operational problem, align engineering and ops teams around it, and ship a product to empower the daily work of the company employees. Trained for 3 years as a operational analyst, my decisions are always <b>data driven.</b></p>
-      <p>I am now moving into the AI industry through a research master's in LLM agents at NTU. My main focus is <b>agentic architecture and agent decision-making</b>. I make use of established agentic patterns as well as innovative ones to target messy and ambiguous real-world problems.</p>
-      <p>In the LLM AI age, a good understanding of the AI technology, combined with product intuition, enables me to produce AI-driven solutions to empower more users.</p>
+      <div class="intro">
+        <p><b><i>3 years operational analyst, 5 years product manager, current AI researcher</i></b></p>
+        <p>I have managed <b>internal operational platforms</b> at Shopee and ByteDance. I learnt how to scope an operational problem, align engineering and ops teams around it, and ship a product that empowers the daily work of company employees. Trained for 3 years as an operations analyst, my decisions are always <b>data driven.</b></p>
+        <p>I am now moving into the AI industry through a research master's in LLM agents at NTU. My main focus is <b>agentic architecture and agent decision-making</b> — using established agentic patterns, as well as designing new ones, to target messy and ambiguous real-world problems.</p>
+        <p>In the LLM AI age, a good understanding of the technology, combined with product intuition, lets me turn that understanding into AI-driven solutions that empower more users.</p>
+      </div>
     </div>
 
     <div class="contact-row">
-      <p>
+      <div class="contact-links">
         <a href="mailto:chupengdai@gmail.com">chupengdai@gmail.com</a>
         <span class="sep">·</span>
         <a href="tel:+6586126331">+65 8612 6331</a>
         <span class="sep">·</span>
-        <a href="tel:+19252019659">+1(925)201 9659</a>
+        <a href="tel:+19252019659">+1 (925) 201 9659</a>
         <span class="sep">·</span>
         <a href="https://www.linkedin.com/in/chupeng-dai/" target="_blank" rel="noopener">linkedin.com/in/chupeng-dai</a>
         <span class="sep">·</span>
         <a href="https://github.com/daichupeng" target="_blank" rel="noopener">github.com/daichupeng</a>
-      </p>
-      <p>Legally authorized to work in the United States and Singapore</p>
+      </div>
+      <div class="contact-note">Legally authorized to work in the United States and Singapore</div>
     </div>
   </div>
 </header>
-
-<section id="overview">
-  <div class="wrap">
-    <p class="eyebrow">The Path Here</p>
-    <div class="path">
-      <div class="path-step">
-        <div class="path-yrs">2018–2020</div>
-        <div class="path-body">
-          <p class="path-title">Foundations — engineering &amp; operations</p>
-          <p>Three years as a logistics operations analyst at Shopee, turn data into actionable SOP, product requests, or management policies.</p>
-        </div>
-      </div>
-      <div class="path-step">
-        <div class="path-yrs">2020–2025</div>
-        <div class="path-body">
-          <p class="path-title">Product &amp; risk — Shopee, ByteDance</p>
-          <p>Built and led debt collection systems, promotion platform, credit risk pipeline across Southeast Asia, leading a team of 4.</p>
-        </div>
-      </div>
-      <div class="path-step">
-        <div class="path-yrs">2025–present</div>
-        <div class="path-body">
-          <p class="path-title">AI agents — NTU research &amp; agentic products</p>
-          <p>Master's research on agent implementation and novel agentic frameworks. Built problem-specific project like AI Insurance Consultant as well as abstract meta agent like Recur Agent.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="experience">
-  <div class="wrap">
-    <p class="eyebrow">Experience</p>
-
-    <div class="job">
-      <div class="job-head">
-        <span class="job-title">Product Manager, Credit Risk</span>
-        <span class="job-meta">JUN 2024 – JUN 2025</span>
-      </div>
-      <div class="job-company">ByteDance, Singapore</div>
-      <ul>
-        <li>Owned the risk management framework for self-operated credit products, including data vendor integration for underwriting.</li>
-        <li>Launched risk control for a <b>Malaysia BNPL product</b>: integrated local credit bureaus and held a 60% underwriting pass rate at a 2.5% first-payment-default rate.</li>
-        <li>Built a <b>debt collection CRM from scratch</b>, covering 4,000 overdue cases in 3 months at an 85% 30-day repayment rate.</li>
-        <li>Shipped an <b>LLM-powered QA system</b> for collection calls, flagging zero-tolerance behaviors at 90%+ recall and 50%+ precision.</li>
-      </ul>
-    </div>
-
-    <div class="job">
-      <div class="job-head">
-        <span class="job-title">Product Manager, Credit Products</span>
-        <span class="job-meta">JAN 2021 – JUN 2024</span>
-      </div>
-      <div class="job-company">Shopee, Singapore</div>
-      <ul>
-        <li>Led PM teams for the debt collection CRM and the user-growth promotion platform.</li>
-        <li>Replaced a rule-based collection strategy with a <b>model-based one</b> (built with data science), cutting operating cost by 10%.</li>
-        <li>Spent 6 months in <b>Brazil</b> standing up debt collection operations for a first-time credit launch — SOPs, BPO agency, monitoring — then handed off to local managers.</li>
-        <li>Built a robocall activation module that improved positive response rate from 15% to 30%+ over 4 months.</li>
-      </ul>
-    </div>
-
-    <div class="job">
-      <div class="job-head">
-        <span class="job-title">Logistics Operations Analyst, Regional Operations</span>
-        <span class="job-meta">JAN 2018 – DEC 2020</span>
-      </div>
-      <div class="job-company">Shopee, Singapore</div>
-      <ul>
-        <li>Designed a delivery-preference feature that improved the in-house fleet's delivery success rate by 8%.</li>
-        <li>Modeled the cost of tightening sellers' days-to-ship policy and rolled out the optimal balance across markets.</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
 
 <section id="projects">
   <div class="wrap">
@@ -381,8 +326,84 @@
   </div>
 </section>
 
+<section id="overview">
+  <div class="wrap text-col">
+    <p class="eyebrow">The Path Here</p>
+    <div class="path">
+      <div class="path-step">
+        <div class="path-yrs">2018–2020</div>
+        <div class="path-body">
+          <p class="path-title">Foundations — engineering &amp; operations</p>
+          <p>Three years as a logistics operations analyst at Shopee, turning data into actionable SOPs, product requests, and management policy.</p>
+        </div>
+      </div>
+      <div class="path-step">
+        <div class="path-yrs">2021–2025</div>
+        <div class="path-body">
+          <p class="path-title">Product &amp; risk — Shopee, ByteDance</p>
+          <p>Built and led debt collection systems, a promotion platform, and a credit risk pipeline across Southeast Asia, leading teams of up to 4.</p>
+        </div>
+      </div>
+      <div class="path-step">
+        <div class="path-yrs">2025–present</div>
+        <div class="path-body">
+          <p class="path-title">AI agents — NTU research &amp; agentic products</p>
+          <p>Master's research on agent implementation and novel agentic frameworks. Built problem-specific projects like insurance_consult, and abstract meta-agents like recur-agent.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap text-col">
+    <p class="eyebrow">Experience</p>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">Product Manager, Credit Risk</span>
+        <span class="job-meta">JUN 2024 – JUN 2025</span>
+      </div>
+      <div class="job-company">ByteDance, Singapore</div>
+      <ul>
+        <li>Owned the risk management framework for self-operated credit products, including data vendor integration for underwriting.</li>
+        <li>Launched risk control for a <b>Malaysia BNPL product</b>: integrated local credit bureaus and held a 60% underwriting pass rate at a 2.5% first-payment-default rate.</li>
+        <li>Built a <b>debt collection CRM from scratch</b>, covering 4,000 overdue cases in 3 months at an 85% 30-day repayment rate.</li>
+        <li>Shipped an <b>LLM-powered QA system</b> for collection calls, flagging zero-tolerance behaviors at 90%+ recall and 50%+ precision.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">Product Manager, Credit Products</span>
+        <span class="job-meta">JAN 2021 – JUN 2024</span>
+      </div>
+      <div class="job-company">Shopee, Singapore</div>
+      <ul>
+        <li>Led PM teams for the debt collection CRM and the user-growth promotion platform.</li>
+        <li>Replaced a rule-based collection strategy with a <b>model-based one</b> (built with data science), cutting operating cost by 10%.</li>
+        <li>Spent 6 months in <b>Brazil</b> standing up debt collection operations for a first-time credit launch — SOPs, BPO agency, monitoring — then handed off to local managers.</li>
+        <li>Built a robocall activation module that improved positive response rate from 15% to 30%+ over 4 months.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-title">Logistics Operations Analyst, Regional Operations</span>
+        <span class="job-meta">JAN 2018 – DEC 2020</span>
+      </div>
+      <div class="job-company">Shopee, Singapore</div>
+      <ul>
+        <li>Designed a delivery-preference feature that improved the in-house fleet's delivery success rate by 8%.</li>
+        <li>Modeled the cost of tightening sellers' days-to-ship policy and rolled out the optimal balance across markets.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
 <section id="education">
-  <div class="wrap">
+  <div class="wrap text-col">
     <p class="eyebrow">Education</p>
 
     <div class="edu-item">
@@ -406,9 +427,8 @@
 </section>
 
 <section id="skills">
-  <div class="wrap">
-    <p class="eyebrow">Skills</p>
-    <h2 class="section-title">Skills &amp; Languages</h2>
+  <div class="wrap text-col">
+    <p class="eyebrow">Skills &amp; Languages</p>
     <dl class="skills-row">
       <div class="skills-col">
         <dt>LANGUAGES</dt>
@@ -424,7 +444,7 @@
 
 <footer>
   <div class="wrap">
-    <p>dai-chupeng/resume — last updated Feb 2026</p>
+    <p>dai-chupeng/resume — last updated Jul 2026</p>
   </div>
 </footer>
 
