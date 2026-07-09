@@ -87,23 +87,43 @@
 
   /* ---------- INTRO STATEMENT ---------- */
   .intro{
+    background:transparent;
+    border:none;
+    padding:0;
+    margin-bottom:34px;
+  }
+  .intro-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    align-items:stretch;
+  }
+  .intro-column{
     background:var(--bg-elev);
     border:1px solid var(--line);
-    border-left:4px solid var(--gold-soft);
-    border-radius:10px;
-    padding:28px 30px;
-    margin-bottom:34px;
-    box-shadow:0 1px 2px rgba(28,35,43,0.05);
+    border-radius:8px;
+    padding:18px 20px;
+    box-shadow:0 1px 2px rgba(28,35,43,0.03);
+    height:100%;
+    display:flex;
+    flex-direction:column;
   }
-  .intro p{
+  .intro-column h3{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:18px;
+    color:var(--text);
+    margin:0 0 10px;
+  }
+  .intro-column p{
     font-family:'Source Serif 4', serif;
     font-weight:400;
-    font-size:clamp(17px, 2.1vw, 19px);
-    line-height:1.55;
+    font-size:clamp(16px, 2vw, 18px);
+    line-height:1.5;
     color:var(--text);
-    margin:0;
+    margin:0 0 10px;
   }
-  .intro p + p{margin-top:14px;}
+  .intro-column p:last-child{margin-bottom:0;}
   .intro b{font-weight:600; color:var(--text);}
 
   .contact-row{
@@ -234,7 +254,8 @@
     header.hero{padding:56px 0 0;}
     section{padding:34px 0;}
     .job-head, .edu-head{flex-direction:column; align-items:flex-start;}
-    .intro{padding:22px 20px;}
+    .intro-grid{grid-template-columns:1fr; gap:12px;}
+    .intro-column{padding:16px 18px;}
   }
 </style>
 </head>
@@ -247,12 +268,20 @@
       <p class="role">Product Manager. Experience in logistics, credit risk, and AI agents</p>
 
       <div class="intro">
-        <p><b><i>3 years as operational analyst, 5 years as product manager, current AI researcher</i></b></p>
-        <p>I have managed <b>internal operational platforms</b> at Shopee and ByteDance. I scope an operational problem into a product requirement, align engineering and ops teams around it, and ship a product that empowers the daily work of company employees. Trained for 3 years as an operations analyst, my decisions are always <b>data driven.</b></p>
-        <p>I am now moving into the AI industry through a research master's in LLM agents at NTU. My main focus is <b>agentic architecture and agent decision-making</b>: implement established agentic patterns and explore new ones, to target messy and ambiguous real-world problems.</p>
-        <p>In the LLM AI age, a PM's skillset needs a critical upgrade: </p>
-        <p>Traditional PMs need the 3 key skills: domain knowledge to make the right product decisions, technical knowledge to optimize the product performance, and communication skills to move stakeholders together.</p>
-        <p>With AI, the barriers to knowledge is at historical low. PMs can no longer rely on their "years of experience" to lead teams. AI PM's new skillset: ability to quickly <b>formulate insights and evaluation frameworks</b> in any domain, constant update in new <b>technological development</b>, and <b>communication</b> is still key.</p>
+        <div class="intro-grid">
+          <div class="intro-column">
+            <h3>My Experience</h3>
+            <p><b><i>3 years as operational analyst, 5 years as product manager, current AI researcher</i></b></p>
+            <p>I have managed <b>internal operational platforms</b> at Shopee and ByteDance. I scope operational problems into product requirements, align engineering and ops teams around them, and ship products that empower daily company work.</p>
+            <p>I am now moving into the AI industry through a research master's in LLM agents at NTU, with a focus on <b>agentic architecture and agent decision-making</b>.</p>
+          </div>
+          <div class="intro-column">
+            <h3>My PM Philosophy</h3>
+            <p>Industries are progressing, and talents are evolving to become more versatile. AI greatly accelerated this change.</p>
+            <p>In this age, a PM's skillset needs a critical upgrade. Traditional PMs bridge different teams with domain knowledge, technical fluency, and communication skills.</p>
+            <p>Today, the strongest AI PMs need to actively lead changes instead of passively responding to requirements. They shoud quickly <b>formulate insights and evaluation frameworks</b>, keep up with new <b>technological developments</b>, and keep <b>communication</b> sharp.</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -348,7 +377,7 @@
       <div class="path-step">
         <div class="path-yrs">2025–present</div>
         <div class="path-body">
-          <p class="path-title">AI agents — NTU research &amp; agentic products</p>
+          <p class="path-title">AI Researcher</p>
           <p>Research on agent implementation and novel agentic frameworks. Built problem-specific projects like insurance consult, and abstract meta-agents like recur-agent. Built a strong understanding of agentic frameworks.</p>
         </div>
       </div>
