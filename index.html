@@ -170,7 +170,26 @@
   .path-step:first-child{border-top:none; padding-top:0;}
   .path-yrs{font-family:'JetBrains Mono', monospace; font-size:12.5px; color:var(--text-faint); padding-top:3px;}
   .path-body .path-title{font-family:'Source Serif 4', serif; font-weight:600; font-size:17px; color:var(--text); margin:0 0 4px;}
-  .path-body p{margin:0; color:var(--text-dim); font-size:14.5px; }
+  .path-body p{margin:0; color:var(--text); font-size:14px; }
+  .path-details{display:none; margin-top:10px;}
+  .path-detail-card{background:var(--bg-elev); border:1px solid var(--line); border-radius:8px; padding:12px 14px; margin-top:10px;}
+  .path-detail-card:first-child{margin-top:0;}
+  .path-detail-head{display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:6px;}
+  .path-detail-company{font-size:14px; font-weight:600; color:var(--gold);}
+  .path-detail-dates{font-family:'JetBrains Mono', monospace; font-size:11.5px; color:var(--text-faint);}
+  .path-project-title{margin:0 0 8px; font-size:13px; font-weight:600; color:var(--text);}
+  .path-detail-card ul{margin:0; padding-left:18px; color:var(--text-dim); font-size:14px;}
+  .path-detail-card li{margin-bottom:6px;}
+  .path-detail-card li::marker{color:var(--teal);}
+  .path-step.is-expanded .path-details{display:block;}
+  .path-step.is-expanded .path-title{color:var(--gold);}
+  .path-toggle{display:flex; justify-content:center; margin-top:18px;}
+  .path-toggle button{
+    border:none; border-radius:999px; background:var(--gold); color:#fff;
+    padding:10px 16px; font-size:13px; font-weight:600; cursor:pointer;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .path-toggle button:hover{background:var(--gold-soft); transform:translateY(-1px);}
   @media (max-width:520px){
     .path-step{grid-template-columns:1fr;}
     .path-yrs{padding-top:0;}
@@ -357,20 +376,95 @@
 
 <section id="overview">
   <div class="wrap text-col">
-    <p class="eyebrow">The Path Here</p>
+    <p class="eyebrow">Path to Here</p>
     <div class="path">
       <div class="path-step">
         <div class="path-yrs">2018–2020</div>
         <div class="path-body">
           <p class="path-title">Data and Operations Analyst</p>
           <p>Three years as a logistics operations analyst at Shopee, turning data into actionable SOPs, product requests, and management policy.</p>
+          <div class="path-details">
+            <div class="path-detail-card">
+              <div class="path-detail-head">
+                <span class="path-detail-company">Shopee · Regional Operations</span>
+                <span class="path-detail-dates">2018–2020</span>
+              </div>
+              <p class="path-project-title">Delivery Preference</p>
+              <ul>
+                <li>Designed a feature to record buyers' preferred delivery timing to help couriers optimize resources.</li>
+                <li>Established SOP with local operations team and used data to monitor delivery performance.</li>
+                <li>Improved Shopee in-house fleet's delivery success rate by 8%.</li>
+              </ul>
+              <p class="path-project-title">Shipping Leadtime Optimization</p>
+              <ul>
+                <li>Analyzed historical seller behaviors and estimated the potential cost of tightening the policy of days to ship for sellers.</li>
+                <li>Determined the optimal days to ship, balancing the potential cost and improvements in buyer experience.</li>
+                <li>Presented the solution to senior management, and coordinated the implementation of the new policies with each market local team.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
       <div class="path-step">
         <div class="path-yrs">2020–2025</div>
         <div class="path-body">
           <p class="path-title">Product Manager Team Lead</p>
-          <p>Five years managing internal platforms and new market launches, navigating through complex and ambiguous user requirements into product features to empower their daily work. Led a team of 4.</p>
+          <p>Five years managing internal platforms, navigating through complex and ambiguous user requirements into product features to empower their daily work. Led a team of up to 4 product managers.</p>
+          <div class="path-details">
+            <div class="path-detail-card">
+              <div class="path-detail-head">
+                <span class="path-detail-company">Shopee · Credit Products PM Team</span>
+                <span class="path-detail-dates">2020–2024</span>
+              </div>
+              <p class="path-project-title">Debt Collection System: Model-based strategy</p>
+              <ul>
+                <li>Produced a model-based strategy to replace the existing rule-based strategy, and integrated the model into the debt collection system to improve debt collection performance. </li>
+                <li>Worked with the data science team to produce a C-Score model, which predicts the probability of overdue users making repayments within the first 30 days of overdue.</li>
+                <li>Integrated the C-score to debt collection system's strategy module while kept optimizing the model. </li>
+                <li>Used the new model-based strategy to decide the most appropriate and cost-effective collection channel for each overdue user, reducing the operating cost by 10%.</li>
+              </ul>
+              <p class="path-project-title">Brazil Debt Collection Operations Set-up</p>
+              <ul>
+                <li>Spent 6 months in Brazil setting up the debt collection operations for first-time credit product launch.</li>
+                <li>Led a team of 2 operations associates to establish collection SOP, draft training materials, discuss commercials and performance metrics with BPO agency, and set up monitoring dashboards.</li>
+                <li>Built system features customized for Brazil's regulations and practices, such as holiday settings and integrated WhatsApp communication.</li>
+                <li>Established the operations in June 2022, and smoothly transferred the team to local managers in August.</li>
+              </ul>
+              
+              <p class="path-project-title">Promotion System: Robocall integration to invite new users</p>
+              <ul>
+                <li>Built a module to invite users to activate credit products using robocalls, integrating with a robocall provider.</li>
+                <li>Optimized the robocall strategy by gathering the call data and activation results for data analysis, to focus on the users with a high likelihood to activate the product after receiving the call.</li>
+                <li>Consistently converted active users with robocalls, and improved the positive response rate from 15% to above 30% with 4 months of strategy reiteration.</li>
+              </ul>
+            </div>
+            <div class="path-detail-card">
+              <div class="path-detail-head">
+                <span class="path-detail-company">ByteDance · Credit Risk Team</span>
+                <span class="path-detail-dates">2024–2025</span>
+              </div>
+              <p class="path-project-title">Malaysia BNPL product risk control</p>
+              <ul>
+                <li>Based on market research and industry experience, identified the major risk exposure points.</li>
+                <li>Worked with the BNPL solution team to allow risk strategy team to use strategies to block high-risk transactions.</li>
+                <li>Integrated with Malaysia's credit report providers to obtain users' credit report at the underwriting stage, allowing risk strategy team to make use of the data to optimize the underwriting strategy.</li>
+                <li>Maintained an overall pass rate of underwriting of 60% and first-payment-default rate of 2.5%.</li>
+              </ul>
+              <p class="path-project-title">Debt Collection System MVP</p>
+              <ul>
+                <li>Developed a Debt Collection system (in-house CRM) from scratch to support the debt collection for Malaysia's BNPL product.</li>
+                <li>The system supports managing overdue date, executing debt collection strategies, integrating with debt collection channels, and facilitate daily debt collection activities.</li>
+                <li>The system managed to cover 4000 overdue cases in 3 months, executed daily robocall, and facilitated manual calling by 4 agents.</li>
+                <li>Maintained a repayment rate of 85% within 30 days of overdue.</li>
+              </ul>
+              <p class="path-project-title">Quality Assurance using LLM AI</p>
+              <ul>
+                <li>Implemented an LLM-powered quality assurance system for debt collection calls, detecting zero-tolerance behaviors to prevent reputational risks.</li>
+                <li>Aimed to aid QA process and improve QA coverage rate by 50%.</li>
+                <li>Collaborated with the developers and algorithm engineers to optimize prompt engineering, aiming to control the recall rate above 90% and maintain precision above 50%.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
       <div class="path-step">
@@ -378,56 +472,25 @@
         <div class="path-body">
           <p class="path-title">AI Researcher</p>
           <p>Research on agent implementation and novel agentic frameworks. Built problem-specific projects like insurance consult, and abstract meta-agents like recur-agent. Built a strong understanding of agentic frameworks.</p>
+          <div class="path-details">
+            <div class="path-detail-card">
+              <div class="path-detail-head">
+                <span class="path-detail-company">NTU · AI Research Group</span>
+                <span class="path-detail-dates">2025–present</span>
+              </div>
+              <p class="path-project-title">LLM agents and agentic frameworks</p>
+              <ul>
+                <li>Researching agent implementation and novel agentic frameworks through a master's program in LLM agents at NTU.</li>
+                <li>Built project work around insurance advisory and meta-agent orchestration to sharpen agentic architecture and decision-making.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="experience">
-  <div class="wrap text-col">
-    <p class="eyebrow">Experience</p>
-
-    <div class="job">
-      <div class="job-head">
-        <span class="job-title">Product Manager, Credit Risk</span>
-        <span class="job-meta">2024 – 2025</span>
-      </div>
-      <div class="job-company">ByteDance, Singapore</div>
-      <ul>
-        <li>Owned the risk management framework for self-operated credit products, including data vendor integration for underwriting.</li>
-        <li>Launched risk control for a <b>Malaysia BNPL product</b>: integrated local credit bureaus and held a 60% underwriting pass rate at a 2.5% first-payment-default rate.</li>
-        <li>Built a <b>debt collection CRM from scratch</b>, covering 4,000 overdue cases in 3 months at an 85% 30-day repayment rate.</li>
-        <li>Shipped an <b>LLM-powered QA system</b> for collection calls, flagging zero-tolerance behaviors at 90%+ recall and 50%+ precision.</li>
-      </ul>
+    <div class="path-toggle">
+      <button id="details-toggle" type="button" aria-expanded="false">Know more details</button>
     </div>
-
-    <div class="job">
-      <div class="job-head">
-        <span class="job-title">Product Manager, Credit Products</span>
-        <span class="job-meta">2020 – 2024</span>
-      </div>
-      <div class="job-company">Shopee, Singapore</div>
-      <ul>
-        <li>Led PM teams for the debt collection CRM and the user-growth promotion platform.</li>
-        <li>Replaced a rule-based collection strategy with a <b>model-based one</b> (built with data science), cutting operating cost by 10%.</li>
-        <li>Spent 6 months in <b>Brazil</b> standing up debt collection operations for a first-time credit launch — SOPs, BPO agency, monitoring — then handed off to local managers.</li>
-        <li>Built a robocall activation module that improved positive response rate from 15% to 30%+ over 4 months.</li>
-      </ul>
-    </div>
-
-    <div class="job">
-      <div class="job-head">
-        <span class="job-title">Logistics Operations Analyst, Regional Operations</span>
-        <span class="job-meta">2018 – 2020</span>
-      </div>
-      <div class="job-company">Shopee, Singapore</div>
-      <ul>
-        <li>Designed a delivery-preference feature that improved the in-house fleet's delivery success rate by 8%.</li>
-        <li>Modeled the cost of tightening sellers' days-to-ship policy and rolled out the optimal balance across markets.</li>
-      </ul>
-    </div>
-
   </div>
 </section>
 
@@ -476,6 +539,23 @@
     <p>dai-chupeng/resume — last updated Jul 2026</p>
   </div>
 </footer>
+
+<script>
+  const detailsToggle = document.getElementById('details-toggle');
+  const pathSteps = document.querySelectorAll('.path-step');
+
+  if (detailsToggle) {
+    detailsToggle.addEventListener('click', () => {
+      const expanded = detailsToggle.getAttribute('aria-expanded') === 'true';
+      detailsToggle.setAttribute('aria-expanded', String(!expanded));
+      detailsToggle.textContent = expanded ? 'Know more details' : 'Hide details';
+
+      pathSteps.forEach((step) => {
+        step.classList.toggle('is-expanded', !expanded);
+      });
+    });
+  }
+</script>
 
 </body>
 </html>
