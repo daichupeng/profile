@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Chupeng Dai — Resume (Platform PM · Brain Co.) — Editable</title>
+<style>
+  @page { size: letter; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Georgia", "Times New Roman", serif;
+    color: #1a1a1a; line-height: 1.4; font-size: 10.5pt;
+    background: #fff;
+  }
+  .page { width: 8.5in; min-height: 11in; padding: 0.6in 0.7in; margin: 0 auto; }
+  header { text-align: center; border-bottom: 1.5px solid #1a1a1a; padding-bottom: 10px; margin-bottom: 14px; }
+  header h1 { font-size: 22pt; letter-spacing: 1px; font-weight: 700; }
+  header .headline { font-size: 11pt; color: #444; margin-top: 2px; }
+  header .contact { font-size: 9.5pt; color: #333; margin-top: 6px; }
+  header .contact a { color: #333; text-decoration: none; }
+  header .contact span { margin: 0 5px; }
+  header .authorized { font-size: 9pt; color: #555; margin-top: 4px; font-style: italic; }
+  section { margin-bottom: 13px; }
+  h2 {
+    font-size: 11pt; text-transform: uppercase; letter-spacing: 1.5px;
+    border-bottom: 1px solid #999; padding-bottom: 2px; margin-bottom: 7px; font-weight: 700;
+  }
+  .summary { font-size: 10.5pt; }
+  .entry { margin-bottom: 9px; }
+  .entry .row { display: flex; justify-content: space-between; align-items: baseline; }
+  .entry .title { font-weight: 700; }
+  .entry .org { font-style: italic; }
+  .entry .date { font-size: 9.5pt; color: #555; white-space: nowrap; }
+  ul { list-style: none; margin-top: 3px; }
+  ul li { padding-left: 14px; position: relative; margin-bottom: 2px; }
+  ul li::before { content: "▪"; position: absolute; left: 2px; color: #555; font-size: 8pt; top: 1px; }
+  .skills-row { margin-bottom: 3px; }
+  .skills-row b { font-weight: 700; }
+
+  /* --- editable mode (hidden when printing) --- */
+  body { background: #f3f4f6; }
+  [contenteditable="true"]:hover { background: #fff7d6; outline: 1px dashed #d6b500; cursor: text; }
+  [contenteditable="true"]:focus { background: #fff; outline: 2px solid #2d6cdf; }
+  .toolbar {
+    position: fixed; top: 12px; right: 12px; z-index: 999;
+    background: #1a1a1a; color: #fff; padding: 10px 14px;
+    border-radius: 10px; font: 12px/1.4 "Helvetica Neue", Arial, sans-serif;
+    box-shadow: 0 8px 24px rgba(0,0,0,.18); display: flex; align-items: center; gap: 10px;
+  }
+  .toolbar small { color: #c9d1e0; font-size: 11px; }
+  .toolbar button {
+    background: #2d6cdf; color: #fff; border: 0; padding: 6px 12px;
+    border-radius: 6px; font-weight: 700; cursor: pointer; font-size: 11px;
+  }
+  .toolbar button:hover { background: #1a55c5; }
+  .toolbar button.ghost { background: transparent; border: 1px solid #555; }
+  @media print {
+    body { background: #fff; }
+    .toolbar { display: none !important; }
+    [contenteditable="true"]:hover,
+    [contenteditable="true"]:focus { background: transparent !important; outline: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <span><b>Edit mode</b> <small>· click any text to edit</small></span>
+  <button onclick="window.print()">Save as PDF (⌘P)</button>
+  <button class="ghost" onclick="document.querySelectorAll('[contenteditable]').forEach(el=>el.setAttribute('contenteditable', el.getAttribute('contenteditable')==='true'?'false':'true'));this.textContent=this.textContent==='Lock'?'Unlock':'Lock'">Lock</button>
+</div>
+
+<div class="page" contenteditable="true" spellcheck="false">
+
+  <header>
+    <h1>CHUPENG DAI</h1>
+    <div class="headline">Platform Product Manager | AI Systems &amp; Shared Infrastructure</div>
+    <div class="contact">
+      <span>Singapore</span>·
+      <span><a href="mailto:chupengdai@gmail.com">chupengdai@gmail.com</a></span>·
+      <span>+65 8612 6331</span>·
+      <span><a href="https://www.linkedin.com/in/chupeng-dai/">linkedin.com/in/chupeng-dai</a></span>·
+      <span><a href="https://github.com/daichupeng">github.com/daichupeng</a></span>
+    </div>
+    <div class="authorized">Legally authorized to work in the United States and Singapore</div>
+  </header>
+
+  <section>
+    <h2>Summary</h2>
+    <p class="summary">Product manager with 5 years building shared internal platforms across credit risk, BNPL, and debt collection at Shopee and ByteDance — including porting a full system design from one market to another with a more elegant, generalized abstraction rather than a one-off rebuild. Currently deepening technical range through an NTU AI Master's, building agentic and meta-agent systems. Looking to bring the same standardize-vs-flexible instinct to platform decisions in applied AI infrastructure.</p>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="entry">
+      <div class="row"><span><span class="title">AI Researcher</span>, <span class="org">NTU · AI Research Group</span></span><span class="date">2025 — Present</span></div>
+      <ul>
+        <li>Researching agent implementation and novel agentic frameworks through a research-based Master's in LLM agents.</li>
+        <li>Built two independent systems to stress-test agentic design patterns: an insurance advisory agent and a meta-agent that recursively decomposes requirements into sub-agents — both used to sharpen judgment on when to generalize a component vs. keep it purpose-built.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row"><span><span class="title">Product Manager</span>, <span class="org">ByteDance · Credit Risk Team</span></span><span class="date">2024 — 2025</span></div>
+      <ul>
+        <li>Designed and built Malaysia's debt collection platform from scratch, applying a more holistic, elegant design abstraction distilled from prior work on Shopee's debt collection system — porting the core strategy engine and channel-integration layer as shared components while rebuilding only the workflow layer for BNPL-specific regulation, covering 4,000 overdue cases in 3 months at an 85% 30-day repayment rate.</li>
+        <li>Defined the ownership boundary between the strategy module (owned) and the C-Score prediction model (data science's), reducing operating cost 10% by letting each side iterate independently without blocking the other; maintained a 60% underwriting pass rate and 2.5% first-payment-default rate.</li>
+        <li>Implemented an LLM-powered QA system for debt collection calls, partnering with algorithm engineers to tune recall above 90% and precision above 50%, aiming to lift QA coverage 50%.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row"><span><span class="title">PM Team Lead</span> (led up to 4 PMs), <span class="org">Shopee · Credit Products</span></span><span class="date">2020 — 2024</span></div>
+      <ul>
+        <li>Spent 6 months solo-standing-up Brazil's first credit-product debt collection operations from zero — SOP, BPO vendor commercials, monitoring dashboards, and market-specific features (holiday rules, WhatsApp integration) — live by June 2022, handed to local managers by August.</li>
+        <li>Replaced a rule-based collection strategy with a model-based one, integrating a data-science-built C-Score model into the strategy layer to select the most cost-effective channel per user, cutting operating cost 10%.</li>
+        <li>Built a robocall invitation module for credit-product activation; iterated the targeting strategy over 4 months, lifting positive response rate from 15% to 30%+.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="row"><span><span class="title">Data &amp; Operations Analyst</span>, <span class="org">Shopee · Regional Operations</span></span><span class="date">2018 — 2020</span></div>
+      <ul>
+        <li>Designed a buyer delivery-time-preference feature and paired SOP, improving in-house fleet delivery success rate 8%.</li>
+        <li>Modeled the cost/benefit of tightening sellers' shipping lead-time policy and drove the rollout across local market teams.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="row"><span><span class="title">M.Eng, Artificial Intelligence</span>, <span class="org">Nanyang Technological University</span></span><span class="date">2025 — Present</span></div>
+      <div>Research-based master's in LLM agents. Current research: Explainable Active Feature Acquisition via Precedent-Augmented Reasoning.</div>
+    </div>
+    <div class="entry">
+      <div class="row"><span><span class="title">Renaissance Engineering Programme</span>, <span class="org">Nanyang Technological University</span></span><span class="date">2013 — 2017</span></div>
+      <div>Top 2% of cohort. B.Eng Chemical Engineering (4.4/5.0, Distinction) + M.Sc Technology Management (4.5/5.0, Highest Distinction).</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills-row"><b>Domains:</b> Platform / shared-systems design, credit risk, debt collection systems, agentic AI, LLM applications</div>
+    <div class="skills-row"><b>Languages:</b> English (bilingual), Mandarin Chinese (native)</div>
+  </section>
+
+</div>
+</body>
+</html>
